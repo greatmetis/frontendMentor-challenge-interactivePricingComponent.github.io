@@ -1,0 +1,408 @@
+/* ------------------------ */
+/* $Catelog */
+/* ------------------------ */
+/**
+* Reset
+* Utility
+* Color 
+* Typography
+* Global
+* Components
+**/
+/* ------------------------ */
+/* $Reset */
+/* ------------------------ */
+* {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: url(../images/icon-check.svg);
+  list-style-position: inside;
+}
+
+// reset input range
+
+// for general
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  height: 8px;
+  padding: 0;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+// for IE
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 8px;
+  /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+  background: transparent;
+  /*leave room for the larger thumb to overflow with a transparent border */
+  border-color: transparent;
+  border-width: 2px 0;
+  /*remove default tick marks*/
+  color: transparent;
+}
+
+/* ------------------------ */
+/* $Utility */
+/* ------------------------ */
+.u-cf::after,
+.u-cf::before {
+  content: "";
+  clear: both;
+  height: 0;
+  display: block;
+}
+@media (max-width: 576px) {
+  .u-flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ------------------------ */
+/* $Color */
+/* ------------------------ */
+$color--primary-soft: hsl(174, 77%, 80%); //full slider bar
+$color--primary-strong: hsl(174, 86%, 45%); // slider bg
+$color--red-light-grayish: hsl(14, 92%, 95%); //discount bg
+$color--red-light: hsl(15, 100%, 70%); // discount text
+$color--blue-pale: hsl(226, 100%, 87%); //CTA text
+$color--white: hsl(0%, 0%, 100%); // priceing component bg
+$color--bgColor: hsl(230, 100%, 99%);
+$color--blue-grayish-light: hsl(224, 65%, 95%); // empty slider bar
+$color--bgToggle: hsl(223, 50%, 87%);
+$color--blue-text: hsl(225, 20%, 60%); // text
+$color--blue-bgText: hsl(227, 35%, 25%); // text && CTA bg
+
+/* ------------------------ */
+/* $Typography */
+/* ------------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap");
+
+p {
+  color: $color--blue-text;
+  font-weight: 400;
+}
+/* ------------------------ */
+/* $Global */
+/* ------------------------ */
+html,
+body {
+  font-family: "Manrope", sans-serif, Helvetica, Arial;
+  font-size: 15px;
+  width: 100vw;
+  height: 100vh;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: url(../images/pattern-circles.svg) no-repeat top 10% center,
+    url(../images/bg-pattern.svg) no-repeat top right;
+  padding: 16px;
+}
+
+/* ------------------------ */
+/* $Components*/
+/* ------------------------ */
+/* $Header*/
+/* ------------------------ */
+.titles {
+  margin-top: 100px;
+  padding: 40px 0;
+  text-align: center;
+  .title {
+    font-size: 40px;
+    line-height: 60px;
+  }
+  .subtitle {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+}
+@media (max-width: 576px) {
+  .titles {
+    margin-top: 40px;
+    .title {
+      font-size: 32px;
+    }
+    .subtitle {
+      font-size: 20px;
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .titles {
+    margin-top: 40px;
+    .title {
+      font-size: 24px;
+    }
+    .subtitle {
+      font-size: 16px;
+      span {
+        display: block;
+      }
+    }
+  }
+}
+/* $Card*/
+/* ------------------------ */
+.card {
+  background-color: $color--white;
+  border-radius: 5px;
+  min-width: 650px;
+  font-size: 15px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: $color--blue-text;
+  box-shadow: 0 2px 20px rgba($color--blue-bgText, 0.2);
+  .top {
+    padding: 32px;
+    border-bottom: 1px solid rgba($color--bgToggle, 0.5);
+  }
+  .bottom {
+    padding: 32px;
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .card {
+    min-width: 500px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    min-width: 480px;
+    .top,
+    .bottom {
+      padding: 16px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    min-width: 250px;
+  }
+}
+// top
+
+.pageviews {
+  text-transform: uppercase;
+  font-weight: 600;
+  float: left;
+  letter-spacing: 1.2px;
+  margin: 20px 80px 20px 0;
+  color: lighten($color--blue-text, 20);
+  .pageview-num {
+    color: $color--blue-text;
+  }
+}
+.price {
+  float: right;
+  margin-left: 40px;
+  .price-num {
+    color: black;
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .pageviews,
+  .price {
+    float: none;
+    margin: 8px;
+  }
+  .pageviews {
+    font-size: 12px;
+  }
+}
+.price-range {
+  margin: 40px 0;
+  width: 100%;
+  border: 1px solid #000;
+  padding: 20px 0;
+  cursor: pointer;
+  border: none;
+  background-color: $color--bgToggle;
+  background: linear-gradient(
+    90deg,
+    hsl(174, 77%, 80%) #{2 * 33%},
+    hsl(223, 50%, 87%) #{2 * 33%}
+  );
+
+  &::-webkit-slider-thumb,
+  &::-webkit-moz-range-thumb {
+    -webkit-appearance: none;
+    background: $color--primary-strong url(../images/icon-slider.svg) no-repeat
+      center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba($color--primary-strong, 0.8);
+    transition: 0.3s;
+    &:hover {
+      background-color: lighten($color--primary-strong, 10);
+    }
+    &:active {
+      cursor: grabbing;
+      background-color: darken($color--primary-strong, 10);
+    }
+  }
+}
+
+.billing-selection {
+  text-align: right;
+  & > * {
+    display: inline-block;
+    vertical-align: bottom;
+    padding: 8px;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .billing_toggle {
+    margin-bottom: 4px;
+    position: relative;
+    height: 25px;
+    width: 50px;
+    input[type="checkbox"] {
+      opacity: 1;
+    }
+  }
+  .slider {
+    background-color: $color--bgToggle;
+    border-radius: 12.5px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      background-color: $color--primary-strong;
+    }
+    &::before {
+      content: "";
+      height: 17px;
+      width: 17px;
+      border-radius: 50%;
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: $color--white;
+      transition: 0.2s;
+    }
+  }
+  .discount-mark {
+    color: $color--red-light;
+    background-color: $color--red-light-grayish;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 16px;
+    // margin-left: 8px;
+    font-weight: 600;
+    transition: 0.2s;
+    bottom: 4px;
+
+    &.no-discount {
+      opacity: 0;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .billing-selection {
+    text-align: center;
+    & > * {
+      padding: 4px;
+    }
+    .discount-mark {
+      bottom: 0;
+    }
+  }
+}
+#is-yearly:checked + .slider::before {
+  transform: translate(-22px, -50%);
+}
+
+// bottom
+
+.feature {
+  float: left;
+  li {
+    margin-bottom: 4px;
+  }
+}
+.start-trial {
+  font-weight: 600;
+  float: right;
+  margin: 20px 0;
+  padding: 10px 40px;
+  border-radius: 20px;
+  background-color: $color--blue-bgText;
+  color: $color--blue-pale;
+  cursor: pointer;
+  outline: none;
+  border: transparent;
+  box-shadow: 1px 2px 10px rgba(black, 0.2);
+  transition: 0.3s;
+  &:hover {
+    background-color: darken($color--blue-bgText, 10);
+    color: lighten($color--blue-pale, 10);
+    box-shadow: 1px 2px 10px rgba(black, 0.4);
+  }
+}
+@media (max-width: 576px) {
+  .feature,
+  .start-trial {
+    float: none;
+    font-size: 12px;
+  }
+  .feature {
+    margin-top: 8px;
+  }
+  .start-trial {
+    margin-top: 32px;
+  }
+}
+
+/* $Footer*/
+/* ------------------------ */
+
+.attribution {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 480px) {
+  .attribution {
+    font-size: 8px;
+  }
+}

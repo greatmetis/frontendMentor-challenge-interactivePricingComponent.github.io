@@ -1,0 +1,442 @@
+/* ------------------------ */
+/* $Catelog */
+/* ------------------------ */
+/**
+* Reset
+* Utility
+* Color 
+* Typography
+* Global
+* Components
+**/
+/* ------------------------ */
+/* $Reset */
+/* ------------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap");
+* {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: url(../images/icon-check.svg);
+  list-style-position: inside;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  height: 8px;
+  padding: 0;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 8px;
+  /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+  background: transparent;
+  /*leave room for the larger thumb to overflow with a transparent border */
+  border-color: transparent;
+  border-width: 2px 0;
+  /*remove default tick marks*/
+  color: transparent;
+}
+
+/* ------------------------ */
+/* $Utility */
+/* ------------------------ */
+.u-cf::after,
+.u-cf::before {
+  content: "";
+  clear: both;
+  height: 0;
+  display: block;
+}
+
+@media (max-width: 576px) {
+  .u-flex-column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+/* ------------------------ */
+/* $Color */
+/* ------------------------ */
+/* ------------------------ */
+/* $Typography */
+/* ------------------------ */
+p {
+  color: #858fad;
+  font-weight: 400;
+}
+
+/* ------------------------ */
+/* $Global */
+/* ------------------------ */
+html,
+body {
+  font-family: "Manrope", sans-serif, Helvetica, Arial;
+  font-size: 15px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: url(../images/pattern-circles.svg) no-repeat top 10% center, url(../images/bg-pattern.svg) no-repeat top right;
+  padding: 16px;
+}
+
+/* ------------------------ */
+/* $Components*/
+/* ------------------------ */
+/* $Header*/
+/* ------------------------ */
+.titles {
+  margin-top: 100px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.titles .title {
+  font-size: 40px;
+  line-height: 60px;
+}
+
+.titles .subtitle {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 600;
+}
+
+@media (max-width: 576px) {
+  .titles {
+    margin-top: 40px;
+  }
+  .titles .title {
+    font-size: 32px;
+  }
+  .titles .subtitle {
+    font-size: 20px;
+  }
+  .titles .subtitle span {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .titles {
+    margin-top: 40px;
+  }
+  .titles .title {
+    font-size: 24px;
+  }
+  .titles .subtitle {
+    font-size: 16px;
+  }
+  .titles .subtitle span {
+    display: block;
+  }
+}
+
+/* $Card*/
+/* ------------------------ */
+.card {
+  background-color: white;
+  border-radius: 5px;
+  min-width: 650px;
+  font-size: 15px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: #858fad;
+  -webkit-box-shadow: 0 2px 20px rgba(41, 51, 86, 0.2);
+          box-shadow: 0 2px 20px rgba(41, 51, 86, 0.2);
+}
+
+.card .top {
+  padding: 32px;
+  border-bottom: 1px solid rgba(205, 215, 238, 0.5);
+}
+
+.card .bottom {
+  padding: 32px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .card {
+    min-width: 500px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    min-width: 480px;
+  }
+  .card .top,
+  .card .bottom {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    min-width: 250px;
+  }
+}
+
+.pageviews {
+  text-transform: uppercase;
+  font-weight: 600;
+  float: left;
+  letter-spacing: 1.2px;
+  margin: 20px 80px 20px 0;
+  color: #c2c7d6;
+}
+
+.pageviews .pageview-num {
+  color: #858fad;
+}
+
+.price {
+  float: right;
+  margin-left: 40px;
+}
+
+.price .price-num {
+  color: black;
+  font-size: 32px;
+}
+
+@media (max-width: 576px) {
+  .pageviews,
+  .price {
+    float: none;
+    margin: 8px;
+  }
+  .pageviews {
+    font-size: 12px;
+  }
+}
+
+.price-range {
+  margin: 40px 0;
+  width: 100%;
+  border: 1px solid #000;
+  padding: 20px 0;
+  cursor: pointer;
+  border: none;
+  background-color: #cdd7ee;
+  background: -webkit-gradient(linear, left top, right top, color-stop(66%, #a5f3eb), color-stop(66%, #cdd7ee));
+  background: linear-gradient(90deg, #a5f3eb 66%, #cdd7ee 66%);
+}
+
+.price-range::-webkit-slider-thumb, .price-range::-webkit-moz-range-thumb {
+  -webkit-appearance: none;
+  background: #10d5c2 url(../images/icon-slider.svg) no-repeat center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 10px 30px rgba(16, 213, 194, 0.8);
+          box-shadow: 0 10px 30px rgba(16, 213, 194, 0.8);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price-range::-webkit-slider-thumb:hover, .price-range::-webkit-moz-range-thumb:hover {
+  background-color: #2aefdb;
+}
+
+.price-range::-webkit-slider-thumb:active, .price-range::-webkit-moz-range-thumb:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+  background-color: #0ca697;
+}
+
+.billing-selection {
+  text-align: right;
+}
+
+.billing-selection > * {
+  display: inline-block;
+  vertical-align: bottom;
+  padding: 8px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.billing-selection .billing_toggle {
+  margin-bottom: 4px;
+  position: relative;
+  height: 25px;
+  width: 50px;
+}
+
+.billing-selection .billing_toggle input[type="checkbox"] {
+  opacity: 1;
+}
+
+.billing-selection .slider {
+  background-color: #cdd7ee;
+  border-radius: 12.5px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.billing-selection .slider:hover {
+  background-color: #10d5c2;
+}
+
+.billing-selection .slider::before {
+  content: "";
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: white;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.billing-selection .discount-mark {
+  color: #ff8c66;
+  background-color: #feece7;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 16px;
+  font-weight: 600;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  bottom: 4px;
+}
+
+.billing-selection .discount-mark.no-discount {
+  opacity: 0;
+}
+
+@media (max-width: 480px) {
+  .billing-selection {
+    text-align: center;
+  }
+  .billing-selection > * {
+    padding: 4px;
+  }
+  .billing-selection .discount-mark {
+    bottom: 0;
+  }
+}
+
+#is-yearly:checked + .slider::before {
+  -webkit-transform: translate(-22px, -50%);
+          transform: translate(-22px, -50%);
+}
+
+.feature {
+  float: left;
+}
+
+.feature li {
+  margin-bottom: 4px;
+}
+
+.start-trial {
+  font-weight: 600;
+  float: right;
+  margin: 20px 0;
+  padding: 10px 40px;
+  border-radius: 20px;
+  background-color: #293356;
+  color: #bdccff;
+  cursor: pointer;
+  outline: none;
+  border: transparent;
+  -webkit-box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.start-trial:hover {
+  background-color: #191f34;
+  color: #f0f3ff;
+  -webkit-box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 576px) {
+  .feature,
+  .start-trial {
+    float: none;
+    font-size: 12px;
+  }
+  .feature {
+    margin-top: 8px;
+  }
+  .start-trial {
+    margin-top: 32px;
+  }
+}
+
+/* $Footer*/
+/* ------------------------ */
+.attribution {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0.5;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+@media (max-width: 480px) {
+  .attribution {
+    font-size: 8px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
