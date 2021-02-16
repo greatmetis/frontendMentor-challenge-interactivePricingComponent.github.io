@@ -10,19 +10,9 @@ This is one of the Challenges from Frontend Mentor
 - pratically using prototype and objects to write Javascript.
 - custom the slider (including slider thumb) through css
 
-``` scss=
-/*some codes above*/
-&::-webkit-slider-thumb,
-  &::-webkit-moz-range-thumb {
-  -webkit-appearance: none;
-  background: $color--primary-strong url(...) no-repeat center;
-  }
-```
-
 🚩 What I'd like to improve but haven't found the solutions?
 - I am not too sure how 'this' work and when to use it is better. By creating script.v2, I felt my code could be much cleaner.
-
-
+- I am unable to change the discount text bewteen "-25%" and "25% discount" while I resize the screen, but I can only use a function to check the screen size when click on the toggle.  
 
 ### Front-end Style Guide
 
